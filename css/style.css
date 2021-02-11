@@ -1,0 +1,351 @@
+@font-face {
+  font-family: googleSans;
+  src: url(../fonts/ProductSans-Regular.ttf);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img{
+  width: 100%;
+}
+
+body{
+  background: rgb(56, 56, 56);
+  font-size: 18px;
+  color: white;
+  font-family: 'googleSans', Arial, Helvetica, sans-serif;
+  margin: 50px;
+}
+
+/* Container */
+.container{
+  display: grid;
+  gap: 3px;
+}
+
+/* header */
+.header{
+  display: grid;
+  grid-template-areas: 
+      'hero hero story-1'
+      'hero hero story-2';
+}
+
+.hero{
+  grid-area: hero;
+  min-height: 310px;
+  background-image: url(../img/hero.jpg);
+  background-size: cover;
+  padding: 40px;
+}
+
+.hero > *{
+  display: none;
+  cursor: default;
+}
+
+.story{
+  background-color: #000;
+  display: grid;
+  /* justify-content: center;
+  align-content: center; */
+  place-content: center;
+  text-align: center;
+  cursor: pointer;
+  transition: .3s;
+}
+.story:hover{
+  filter: saturate(150%);
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+}
+.story-1{
+  grid-area: story-1;
+  background-image: url(../img/brotherhood.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.story-2{
+  grid-area: story-2;
+  background-image: url(../img/revelations.jpg);
+  background-size: cover;
+}
+
+.story .title{
+  font-size: 3em;
+  font-weight: 400;
+}
+.story > *{
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
+}
+
+/* Navigation */
+.menu{
+  order: -1;
+  margin: 0 10px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+.menu .series{
+  font-size: 1.2em;
+  color: white;
+  text-shadow: 1px 1px 10px rgba(255, 0, 0, 0.8);
+}
+.menu ul{
+  display: grid;
+  list-style: none;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 2px;
+  margin: 10px;
+}
+.menu a{
+  display: block;
+  background-color: black;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: 600;
+  transition: .3s;
+}
+.menu a:hover{
+  background-color: #e0513e;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transform: scale(1.03);
+}
+
+/* Hamburger Menu */
+.menu-toggle{
+  position: relative;
+  display: none;
+  flex-direction: column;
+  height: 21px;
+  justify-content: space-between;
+  z-index: 2;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.menu-toggle input{
+  position: absolute;
+  top: -3px;
+  width: 30px;
+  height: 28px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toggle span{
+  display: block;
+  border-radius: 2px;
+  width: 28px;
+  height: 3px;
+  background-color: #fffbf4;
+}
+
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2){
+  transition: 0.3s;
+  transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(3){
+  transition: 0.3s;
+}
+
+.menu-toggle span:nth-child(4){
+  transition: 0.3s;
+  transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+  transform: rotate(45deg) translate(1px ,-1.2px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3){
+  transform: scale(0);
+  opacity: 0;
+}
+.menu-toggle input:checked ~ span:nth-child(4){
+  transform: rotate(-45deg) translate(-1.2px ,1px);
+}
+
+
+/* Services */
+.services{
+  margin: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 8px;
+}
+.service{
+  background-color: black;
+  border-radius: 3px;
+  color: #dfdfdf;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: .3s;
+}
+.service:hover{
+  background-color: rgb(31, 31, 31);
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.service .icon{
+  font-size: 2em;
+  margin: 5px;
+}
+
+.service h3{
+  font-size: 1.3em;
+  margin-bottom: 5px;
+}
+
+/* Gallery */
+.gallery{
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 3px;
+}
+
+.gallery h2{
+  grid-column: 1/-1;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
+.gallery img{
+  transition: .3s;
+}
+.gallery img:hover{
+  filter: saturate(150%);
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Breakpoint */
+@media (max-width: 1024px){
+  .menu {
+    order: inherit;
+    grid-template-columns: 1fr;
+  }
+  .menu .series{
+    display: none;
+  }
+
+  .hero > *{
+    display: block;
+    text-shadow: 1px 1px 10px rgba(255, 0, 0, 0.8);
+  }
+  .hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px){
+  body{
+    margin: 20px;
+  }
+  .menu{
+    order: -1;
+    justify-items: end;
+    z-index: 1000;
+  }
+  .menu-toggle{
+    display: flex;
+  }
+  .menu{
+    justify-content: space-between;
+    padding: 0 30px;
+  }
+  .menu ul {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 300px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: black;
+    z-index: -1;
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.5);
+    transform: translateY(-100%);
+    transition: .5s;
+  }
+  .menu ul li{
+    width: 100%;
+    background-color: none;
+    padding: 10px;
+  }
+  .menu a{
+    background-color: black;
+    padding: 10px;
+  }
+
+  nav ul.slide{
+    transform: translateY(0);
+  }
+
+  .hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-position: -130px 0;
+  }
+  .story .title{
+    font-size: 2em;
+    font-weight: 400;
+  }
+  .story .quotes{
+    font-size: 0.9em;
+    font-weight: 400;
+  }
+}
+
+@media (max-width: 650px){
+  body{
+    margin: 15px;
+  }
+  .header{
+    grid-template-areas: 
+    'hero'
+    'story-1'
+    'story-2';
+  }
+  .hero{
+    min-height: 200px;
+    background-position: center;
+  }
+  .story{
+    padding: 50px;
+  }
+  .story .title{
+    font-size: 2em;
+    font-weight: 400;
+  }
+  .story .quotes{
+    font-size: 0.9em;
+    font-weight: 400;
+  }
+}
+

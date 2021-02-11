@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ezio | Assassins creeds</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+
+    <header class="header">
+      <div class="hero">
+        <h2 class="heading">Ezio Auditore</h2>
+        <p class="sub-heading">Justice & Peace</p>
+      </div>
+      <div class="story story-1">
+        <h4 class="title">Brotherhood</h4>
+        <p class="quotes">we work in the dark to serve the light</p>
+      </div>
+      <div class="story story-2">
+        <h4 class="title">Revelations</h4>
+        <p class="quotes">Nothing is True</p>
+      </div>
+    </header>
+
+    <nav class="menu">
+      <div class="series">
+        <h1>Ezio Auditore</h1>
+      </div>
+      <ul class="menu-list">
+        <li><a href="">Home</a></li>
+        <li><a href="">Series</a></li>
+        <li><a href="">Story</a></li>
+        <li><a href="">Gallery</a></li>
+      </ul>
+      <div class="menu-toggle">
+        <input type="checkbox" name="" id="">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+    <section class="services">
+      <div class="service">
+        <div class="icon">🎮</div>
+          <h3>Games</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, voluptates.</p>
+      </div>
+      <div class="service">
+        <div class="icon">🎥</div>
+          <h3>Movies</h3>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+      </div>
+      <div class="service">
+        <div class="icon">👕</div>
+          <h3>Costume</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad et, voluptatum itaque deserunt odio soluta.</p>
+      </div>
+      <div class="service">
+        <div class="icon">🏃</div>
+          <h3>Parkour</h3>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, doloribus assumenda!</p>
+      </div>
+    </section>
+    <section class="gallery">
+      <h2>Gallery</h2>
+      <img src="img/gallery/ezio1.jpg" alt="">
+      <img src="img/gallery/ezio2.jpg" alt="">
+      <img src="img/gallery/ezio3.jpg" alt="">
+      <img src="img/gallery/ezio4.jpg" alt="">
+      <img src="img/gallery/ezio5.jpg" alt="">
+      <img src="img/gallery/ezio6.jpg" alt="">
+      <img src="img/gallery/ezio7.jpg" alt="">
+      <img src="img/gallery/ezio8.jpg" alt="">
+      <img src="img/gallery/ezio9.jpg" alt="">
+      <img src="img/gallery/ezio10.jpg" alt="">
+    </section>
+  </div>
+  <script>
+    const toggle = document.querySelector('.menu-toggle input');
+    const body = document.querySelector('body');
+    const nav = document.querySelector('nav ul');
+    console.log(nav)
+
+    toggle.addEventListener('click',function () {
+      nav.classList.toggle('slide')
+    });
+  </script>
+</body>
+</html>
